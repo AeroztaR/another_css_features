@@ -1,0 +1,136 @@
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #eee;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+select,
+button {
+    outline: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* another CSS Features */
+
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 960px;
+    margin: 5vh auto;
+    padding: 0 5%;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    background-color: #4DD0E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.card h2 {
+    transition: 0.2s;
+    transform: translateY(20px);
+}
+
+.card p {
+    transition: 0.2s;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    bottom: 5%;
+    left: 5%;
+    border-top: solid 2px #3F51B5;
+    border-bottom: solid 2px #3F51B5;
+    transition: 0.2s;
+    transform: scaleX(0);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    bottom: 5%;
+    left: 5%;
+    border-right: solid 2px #3F51B5;
+    border-left: solid 2px #3F51B5;
+    transition: 0.2s;
+    transform: scaleY(0);
+}
+
+.card:hover::before,
+.card:hover::after {
+    transform: scale(1);
+}
+
+.card:hover h2,
+.card:hover p {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
