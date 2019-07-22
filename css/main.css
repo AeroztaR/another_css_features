@@ -55,6 +55,10 @@ button {
     outline: none;
 }
 
+figure {
+    margin: 0;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -74,6 +78,8 @@ button {
     padding: 0 5%;
 }
 
+/* card hover border effect */
+
 .card {
     width: 300px;
     height: 300px;
@@ -83,6 +89,7 @@ button {
     align-items: center;
     text-align: center;
     position: relative;
+    margin-bottom: 3%;
 }
 
 .card h2 {
@@ -133,4 +140,44 @@ button {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+}
+
+/* button highlight */
+
+.highlight {
+    position: relative;
+}
+
+.highlight__btn {
+    color: #fff;
+    background-color: #ef5350;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+}
+
+.highlight__btn::before {
+    content: '';
+    position: absolute;
+    width: 2em;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(238, 238, 238, .5);
+    transform: translateX(-7em) skew(-45deg);
+}
+
+.highlight__btn:hover::before {
+    animation: hoverLight 1s;
+}
+
+@keyframes hoverLight {
+    from {
+        transform: translateX(-5em) skewX(-45deg);
+    }
+    to {
+        transform: translateX(11em) skewX(-45deg);
+    }
 }
