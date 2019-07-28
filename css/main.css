@@ -181,3 +181,34 @@ figure {
         transform: translateX(11em) skewX(-45deg);
     }
 }
+
+/* svg hover effect btn */
+
+.svgWrap {
+    margin-top: 3%;
+    width: 130px;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+    position: relative;
+    cursor: pointer;
+}
+
+.svgWrap svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.svgWrap svg rect {
+    stroke: #EF6C00;
+    stroke-width: 1;
+    transition: .8s;
+    stroke-dasharray: 400, 0;
+}
+
+.svgWrap:hover svg rect {
+    stroke-width: 4;
+    stroke-dasharray: 35, 245;
+    stroke-dashoffset: 39;
+}
